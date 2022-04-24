@@ -33,9 +33,9 @@ Project generated from the https://github.com/boromir674/cookiecutter-python-pac
     :alt: Supported Python versions
     :target: https://pypi.org/project/biskotaki
 
-.. |commits_since_specific_tag_on_master| image:: https://img.shields.io/github/commits-since/boromir674/biskotaki/v0.0.3/master?color=blue&logo=github
+.. |commits_since_specific_tag_on_master| image:: https://img.shields.io/github/commits-since/boromir674/biskotaki/v0.0.4/master?color=blue&logo=github
     :alt: GitHub commits since tagged version (branch)
-    :target: https://github.com/boromir674/biskotaki/compare/v0.0.3..master
+    :target: https://github.com/boromir674/biskotaki/compare/v0.0.4..master
 
 .. |commits_since_latest_github_release| image:: https://img.shields.io/github/commits-since/boromir674/biskotaki/latest?color=blue&logo=semver&sort=semver
     :alt: GitHub commits since latest release (by SemVer)
@@ -44,28 +44,45 @@ Project generated from the https://github.com/boromir674/cookiecutter-python-pac
 Features
 ========
 
-- TODO-feature 1
-- TODO-feature 2
+
+1. **biskotaki** `python package`
+
+   a. **Great Feature**
+   b. **Nice Feature**
+
+2. **Test Suite** using `Pytest`
+3. **Parallel Execution** of Unit Tests, on multiple cpu's
+4. **Automation**, using `tox`
+
+   a. **Code Coverage** measuring
+   b. **Build Command**, using the `build` python package
+   c. **Pypi Deploy Command**, supporting upload to both `pypi.org` and `test.pypi.org` servers
+   d. **Type Check Command**, using `mypy`
+5. **CI Pipeline**, running on `Github Actions`
+
+   a. **Job Matrix**, spanning different `platform`'s and `python version`'s
+
+      1. Platfroms: `ubuntu-latest`, `macos-latest`
+      2. Python Iterpreters: `3.6`, `3.7`, `3.8`, `3.9`, `3.10`
+   b. **Parallel Job** execution, generated from the `matrix`, that runs the `Test Suite`
+
 
 Prerequisites
 =============
 
-You need to have Python installed.
+You need to have `Python` installed.
 
-Installation
-============
+Quickstart
+==========
 
 Using `pip` is the approved way for installing `biskotaki`.
 
-.. code-block
+.. code-block:: sh
 
     python3 -m pip install biskotaki
 
 
-Usage
-=====
-
-TODO
+TODO demonstrate a use case
 
 License
 =======
