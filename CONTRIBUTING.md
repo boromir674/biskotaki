@@ -71,13 +71,12 @@ Here's how to set up `biskotaki` for local development.
 
 ```bash
 git clone git@github.com:boromir674/biskotaki.git
-cd biskotaki
 ```
 
 3. Install your local copy into a virtualenv. Assuming you have virtualenv installed, this is how you set up your fork for local development:
 
 ```bash
-cd cookiecutter-python-packge
+cd biskotaki
 virtualenv env --python=python3
 source env/bin/activate
 pip install -e .
