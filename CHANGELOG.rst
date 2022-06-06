@@ -1,5 +1,19 @@
+=========
 Changelog
 =========
+
+0.8.0 (2022-06-06)
+==================
+
+Generate a new `biskotaki` Python Package Project, using the
+`v1.4.0 Cookiecutter Python Package`_ project generator.
+
+For more, on the generator used, check the `documentation`, `repository`_ and `Template`_ links.
+
+Generated Additions
+-------------------
+
+Complete Documentation Website, build with Sphinx on readthedocs.org server!
 
 
 0.7.0 (2022-05-11)
@@ -81,6 +95,7 @@ ci
 .. _v0.10.0 Template: https://github.com/boromir674/cookiecutter-python-package/tree/v0.10.0/src/cookiecutter_python
 
 .. _v0.10.0 Cookiecutter Python Package: https://python-package-generator.readthedocs.io/en/v0.10.0/
+.. _v1.4.0 Cookiecutter Python Package: https://python-package-generator.readthedocs.io/en/v1.4.0/
 
 .. _v0.10.0 biskotaki.yaml: https://github.com/boromir674/cookiecutter-python-package/tree/v0.10.0/.github/biskotaki.yaml
 
