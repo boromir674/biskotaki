@@ -2,6 +2,17 @@
 Changelog
 =========
 
+0.1.1 (2023-02-12)
+==================
+
+Changes
+^^^^^^^
+
+ci
+^^
+- CI/CD Pipeline publishing top PyPI and DockerHub
+
+
 0.0.1 (2023-02-12)
 =======================================
 
