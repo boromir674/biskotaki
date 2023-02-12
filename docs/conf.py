@@ -30,7 +30,7 @@ def get_templated_vars():
             package_name='biskotaki',
             author_name='Konstantinos Lampridis',
             year='2023',
-            version='0.0.1',
+            version='0.1.1',
             github_username='boromir674',
             repo_name='biskotaki',
         ),
