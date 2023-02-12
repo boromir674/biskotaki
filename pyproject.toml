@@ -11,7 +11,7 @@ build-backend = "poetry.core.masonry.api"
 ## Also renders on pypi as 'subtitle'
 [tool.poetry]
 name = "biskotaki"
-version = "0.1.1"
+version = "0.1.1-rc0"
 description = "Project generated from the https://github.com/boromir674/cookiecutter-python-package/tree/master/src/cookiecutter_python cookiecutter"
 authors = ["Konstantinos Lampridis <k.lampridis@hotmail.com>"]
 maintainers = ["Konstantinos Lampridis <k.lampridis@hotmail.com>"]
