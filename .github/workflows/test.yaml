@@ -189,7 +189,7 @@ jobs:
         IMAGE_NAME="biskotaki"
         IMAGE_REF="$IMAGE_NAME:${IMAGE_TAG}"
 
-        docker build -t "${DOCKER_USER}/IMAGE_REF" .
+        docker build -t "${DOCKER_USER}/$IMAGE_REF" .
         echo "IMAGE_REF=$IMAGE_REF" >> $GITHUB_ENV
     - name: Publish Docker Image to DockerHub
       env:
