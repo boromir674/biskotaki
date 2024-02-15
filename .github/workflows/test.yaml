@@ -62,7 +62,7 @@ env:
   PYLINT_SCORE_THRESHOLD: "8.2"
 
   #### DOCS Build/Test ####
-  ALWAYS_DOCS: "false"
+  ALWAYS_DOCS: "true"
   DOCS_JOB_POLICY: '2'  # {2, 3}
   DOCS_BUILDER_RUNTIME: "3.10"
 
