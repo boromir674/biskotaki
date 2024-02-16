@@ -175,13 +175,17 @@ jobs:
           WHEEL_SIZE=$(echo $WHEEL_INFO | cut -d ' ' -f 2)
           echo "WHEEL_SIZE=$WHEEL_SIZE" >> $GITHUB_ENV
 
-          # extract '1.12.5.dev0' from 'cookiecutter_python-1.12.5.dev0-py3-none-any.whl'
-          PEP_VERSION=$(echo $WHEEL_NAME | sed -E "s/cookiecutter_python-([^ ]+)-py3-none-any.whl/\1/")
+          # extract '1.12.5.dev0' from 'biskotaki-1.12.5.dev0-py3-none-any.whl'
+          PEP_VERSION=$(echo $WHEEL_NAME | sed -E "s/biskotaki-([^ ]+)-py3-none-any.whl/\1/")
 
           echo "PEP_VERSION=${PEP_VERSION}" >> $GITHUB_OUTPUT
 
       - run: 'echo "WHEEL_NAME: $WHEEL_NAME SIZE: $WHEEL_SIZE"'
       - run: 'echo "PEP_VERSION: $PEP_VERSION"'
+
+      # Crash Workflow if PEP_VERSION is not set
+      - if: ${{ steps.extract_wheel_info.outputs.PEP_VERSION == '' }}
+        run: exit 1
 
       ###### TEST SUITE RUN against Wheel ######
       - name: Run Test Suite Against Wheel
@@ -217,7 +221,7 @@ jobs:
           DIST_DIR=dist
           echo "DIST_DIR=${DIST_DIR}" >> $GITHUB_ENV
           mkdir ${DIST_DIR}
-          mv ".tox/${DIST_DIR}/cookiecutter_python-${PKG_VERSION}.tar.gz" "${DIST_DIR}"
+          mv ".tox/${DIST_DIR}/biskotaki-${PKG_VERSION}.tar.gz" "${DIST_DIR}"
           mv "${{ env.WHEEL_PATH }}" "${DIST_DIR}"
           tox -e check -vv -s false
 
