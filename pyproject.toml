@@ -134,12 +134,12 @@ test = [
     "pytest",
     "pytest-cov",
     "pytest-explicit",
+    "pytest-xdist",
 ]
 typing = [
     "mypy",
     "types-requests",
     "pytest",
-    "pytest-xdist",
 ]
 docs = [
     "sphinx",
