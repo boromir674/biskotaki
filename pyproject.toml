@@ -139,6 +139,7 @@ typing = [
     "mypy",
     "types-requests",
     "pytest",
+    "pytest-xdist",
 ]
 docs = [
     "sphinx",

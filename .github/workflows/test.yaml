@@ -152,7 +152,9 @@ jobs:
 
       ###### TEST SUITE RUN against Edit and Sdist ######
       - name: Build and Test 'Edit' and 'Sdist' & Build Wheel(s)
-        run: tox -vv -s false | tee test_output.log
+        run: |
+          set -o pipefail
+          tox -vv -s false | tee test_output.log
         env:
           PLATFORM: ${{ matrix.platform }}
           BUILD_DEST: ${{ env.WHEELS_PIP_DIR }}
