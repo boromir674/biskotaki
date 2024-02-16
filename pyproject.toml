@@ -117,7 +117,6 @@ pytest-explicit = { version = "^1.0.1", optional = true }
 
 # Type Checking
 mypy = { version = "^1.8.0", optional = true }
-types-requests = { version = "^2.31.0.20240125", optional = true }
 
 # Docs: dev and build dependencies
 sphinx = { version = "~4", optional = true }
@@ -168,7 +167,7 @@ minversion = "6.2"
 addopts = "--strict-markers"
 markers = [
     "slow: Marks a slow test",
-    "integration: Tests applicable to a newly Generated Project, running with tox",
+    "integration: Integration Tests",
     "network_bound: Require internet connection",
 ]
 testpaths = [
