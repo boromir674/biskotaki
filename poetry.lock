@@ -274,6 +274,21 @@ files = [
 test = ["pytest (>=6)"]
 
 [[package]]
+name = "execnet"
+version = "2.0.2"
+description = "execnet: rapid multi-Python deployment"
+category = "main"
+optional = true
+python-versions = ">=3.7"
+files = [
+    {file = "execnet-2.0.2-py3-none-any.whl", hash = "sha256:88256416ae766bc9e8895c76a87928c0012183da3cc4fc18016e6f050e025f41"},
+    {file = "execnet-2.0.2.tar.gz", hash = "sha256:cc59bc4423742fd71ad227122eb0dd44db51efb3dc4095b45ac9a08c770096af"},
+]
+
+[package.extras]
+testing = ["hatch", "pre-commit", "pytest", "tox"]
+
+[[package]]
 name = "ghp-import"
 version = "2.1.0"
 description = "Copy your docs directly to the gh-pages branch."
@@ -370,13 +385,13 @@ i18n = ["Babel (>=2.7)"]
 
 [[package]]
 name = "jsbeautifier"
-version = "1.15.0"
+version = "1.15.1"
 description = "JavaScript unobfuscator and beautifier."
 category = "main"
 optional = true
 python-versions = "*"
 files = [
-    {file = "jsbeautifier-1.15.0.tar.gz", hash = "sha256:b44acb3e890799985999fa38247b6ed5766d8a7de912b6f1ff8d41ca3cd1b53f"},
+    {file = "jsbeautifier-1.15.1.tar.gz", hash = "sha256:ebd733b560704c602d744eafc839db60a1ee9326e30a2a80c4adb8718adc1b24"},
 ]
 
 [package.dependencies]
@@ -948,6 +963,27 @@ pytest = "*"
 tests = ["flake8", "mypy"]
 
 [[package]]
+name = "pytest-xdist"
+version = "3.5.0"
+description = "pytest xdist plugin for distributed testing, most importantly across multiple CPUs"
+category = "main"
+optional = true
+python-versions = ">=3.7"
+files = [
+    {file = "pytest-xdist-3.5.0.tar.gz", hash = "sha256:cbb36f3d67e0c478baa57fa4edc8843887e0f6cfc42d677530a36d7472b32d8a"},
+    {file = "pytest_xdist-3.5.0-py3-none-any.whl", hash = "sha256:d075629c7e00b611df89f490a5063944bee7a4362a5ff11c7cc7824a03dfce24"},
+]
+
+[package.dependencies]
+execnet = ">=1.1"
+pytest = ">=6.2.0"
+
+[package.extras]
+psutil = ["psutil (>=3.0)"]
+setproctitle = ["setproctitle"]
+testing = ["filelock"]
+
+[[package]]
 name = "python-dateutil"
 version = "2.8.2"
 description = "Extensions to the standard Python datetime module"
@@ -1243,21 +1279,6 @@ files = [
 ]
 
 [[package]]
-name = "types-requests"
-version = "2.31.0.20240125"
-description = "Typing stubs for requests"
-category = "main"
-optional = true
-python-versions = ">=3.8"
-files = [
-    {file = "types-requests-2.31.0.20240125.tar.gz", hash = "sha256:03a28ce1d7cd54199148e043b2079cdded22d6795d19a2c2a6791a4b2b5e2eb5"},
-    {file = "types_requests-2.31.0.20240125-py3-none-any.whl", hash = "sha256:9592a9a4cb92d6d75d9b491a41477272b710e021011a2a3061157e2fb1f1a5d1"},
-]
-
-[package.dependencies]
-urllib3 = ">=2"
-
-[[package]]
 name = "typing-extensions"
 version = "4.9.0"
 description = "Backported and Experimental Type Hints for Python 3.8+"
@@ -1347,10 +1368,10 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 
 [extras]
 docs = ["mkdocs", "mkdocs-click", "mkdocs-gen-files", "mkdocs-literate-nav", "mkdocs-macros-plugin", "mkdocs-material", "mkdocs-mermaid2-plugin", "mkdocs-section-index", "mkdocstrings", "mkdocstrings-python", "pymdown-extensions"]
-test = ["pytest", "pytest-cov", "pytest-explicit"]
-typing = ["mypy", "pytest", "types-requests"]
+test = ["pytest", "pytest-cov", "pytest-explicit", "pytest-xdist"]
+typing = ["mypy", "pytest"]
 
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8, <3.13"
-content-hash = "d843c6bf110c9ddd4aab4009d056b8bf08e6e65946d977d6770b606a5b97f2dd"
+content-hash = "ebad14d3fb3e53085cfbbe8a6fe970b2f575db99293611a8d84c3da34d89c893"

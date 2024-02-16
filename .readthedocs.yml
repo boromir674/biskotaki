@@ -19,9 +19,10 @@ build:
       - python -m pip install poetry
       - python -m poetry export -o req-docs.txt -E docs
     # A2. INSTALL REQUIREMENTS
-    # A3. INSTALL PACKAGE
+    # A3. INSTALL PACKAGE and make sure pre_build scripts dependencies are installed
     post_install:
       - python -m pip install -e .
+      - python -m pip install pyyaml
     # B1. GENERATE Docs Sources
     pre_build:
       - python ./scripts/visualize-ga-workflow.py > ./docs/cicd_mermaid.md
