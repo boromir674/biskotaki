@@ -1,4 +1,4 @@
 def test_import_module():
-    import biskotaki
+    import biskotakigold
 
-    assert biskotaki is not None
+    assert biskotakigold is not None

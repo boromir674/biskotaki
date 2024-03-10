@@ -1,6 +1,6 @@
-BISKOTAKI
+BISKOTAKI GOLD STANDARD
 
-Project generated using https://github.com/boromir674/cookiecutter-python-package
+Project generated from https://github.com/boromir674/cookiecutter-python-package/
 
 .. start-badges
 
@@ -9,16 +9,16 @@ Project generated using https://github.com/boromir674/cookiecutter-python-packag
 | |ruff| |gh-lic| |commits_since_specific_tag_on_main| |commits_since_latest_github_release|
 
 |
-| **Code:** https://github.com/boromir674/biskotaki
-| **Docs:** https://biskotaki.readthedocs.io/en/main/
-| **PyPI:** https://pypi.org/project/biskotaki/
-| **CI:** https://github.com/boromir674/biskotaki/actions/
+| **Code:** https://github.com/boromir674/biskotaki-gold
+| **Docs:** https://biskotaki-gold.readthedocs.io/en/main/
+| **PyPI:** https://pypi.org/project/biskotakigold/
+| **CI:** https://github.com/boromir674/biskotaki-gold/actions/
 
 
 Features
 ========
 
-1. **biskotaki** `python package`
+1. **biskotakigold** `python package`
 
    a. TODO Document a **Great Feature**
    b. TODO Document another **Nice Feature**
@@ -87,11 +87,11 @@ You need to have `Python` installed.
 Quickstart
 ==========
 
-Using `pip` is the approved way for installing `biskotaki`.
+Using `pip` is the approved way for installing `biskotakigold`.
 
 .. code-block:: sh
 
-    python3 -m pip install biskotaki
+    python3 -m pip install biskotakigold
 
 
 TODO Document a use case
@@ -134,9 +134,9 @@ License
 
 .. _black: https://black.readthedocs.io/en/stable/
 
-.. _Github Actions: https://github.com/boromir674/biskotaki/actions
+.. _Github Actions: https://github.com/boromir674/biskotaki-gold/actions
 
-.. _GNU Affero General Public License v3.0: https://github.com/boromir674/biskotaki/blob/main/LICENSE
+.. _GNU Affero General Public License v3.0: https://github.com/boromir674/biskotaki-gold/blob/main/LICENSE
 
 
 .. BADGE ALIASES
@@ -144,52 +144,52 @@ License
 .. Build Status
 .. Github Actions: Test Workflow Status for specific branch <branch>
 
-.. |build| image:: https://img.shields.io/github/workflow/status/boromir674/biskotaki/Test%20Python%20Package/main?label=build&logo=github-actions&logoColor=%233392FF
+.. |build| image:: https://img.shields.io/github/workflow/status/boromir674/biskotaki-gold/Test%20Python%20Package/main?label=build&logo=github-actions&logoColor=%233392FF
     :alt: GitHub Workflow Status (branch)
-    :target: https://github.com/boromir674/biskotaki/actions/workflows/test.yaml?query=branch%3Amain
+    :target: https://github.com/boromir674/biskotaki-gold/actions/workflows/test.yaml?query=branch%3Amain
 
 
 .. Documentation
 
-.. |docs| image:: https://img.shields.io/readthedocs/biskotaki/main?logo=readthedocs&logoColor=lightblue
+.. |docs| image:: https://img.shields.io/readthedocs/biskotaki-gold/main?logo=readthedocs&logoColor=lightblue
     :alt: Read the Docs (version)
-    :target: https://biskotaki.readthedocs.io/en/main/
+    :target: https://biskotaki-gold.readthedocs.io/en/main/
 
 .. Code Coverage
 
-.. |coverage| image:: https://img.shields.io/codecov/c/github/boromir674/biskotaki/main?logo=codecov
+.. |coverage| image:: https://img.shields.io/codecov/c/github/boromir674/biskotaki-gold/main?logo=codecov
     :alt: Codecov
-    :target: https://app.codecov.io/gh/boromir674/biskotaki
+    :target: https://app.codecov.io/gh/boromir674/biskotaki-gold
 
 .. PyPI
 
-.. |release_version| image:: https://img.shields.io/pypi/v/biskotaki
+.. |release_version| image:: https://img.shields.io/pypi/v/biskotakigold
     :alt: Production Version
-    :target: https://pypi.org/project/biskotaki/
+    :target: https://pypi.org/project/biskotakigold/
 
-.. |wheel| image:: https://img.shields.io/pypi/wheel/biskotaki?color=green&label=wheel
+.. |wheel| image:: https://img.shields.io/pypi/wheel/biskotakigold?color=green&label=wheel
     :alt: PyPI - Wheel
-    :target: https://pypi.org/project/biskotaki
+    :target: https://pypi.org/project/biskotakigold
 
-.. |supported_versions| image:: https://img.shields.io/pypi/pyversions/biskotaki?color=blue&label=python&logo=python&logoColor=%23ccccff
+.. |supported_versions| image:: https://img.shields.io/pypi/pyversions/biskotakigold?color=blue&label=python&logo=python&logoColor=%23ccccff
     :alt: Supported Python versions
-    :target: https://pypi.org/project/biskotaki
+    :target: https://pypi.org/project/biskotakigold
 
 .. Github Releases & Tags
 
-.. |commits_since_specific_tag_on_main| image:: https://img.shields.io/github/commits-since/boromir674/biskotaki/v0.0.1/main?color=blue&logo=github
+.. |commits_since_specific_tag_on_main| image:: https://img.shields.io/github/commits-since/boromir674/biskotaki-gold/v0.0.1/main?color=blue&logo=github
     :alt: GitHub commits since tagged version (branch)
-    :target: https://github.com/boromir674/biskotaki/compare/v0.0.1..main
+    :target: https://github.com/boromir674/biskotaki-gold/compare/v0.0.1..main
 
-.. |commits_since_latest_github_release| image:: https://img.shields.io/github/commits-since/boromir674/biskotaki/latest?color=blue&logo=semver&sort=semver
+.. |commits_since_latest_github_release| image:: https://img.shields.io/github/commits-since/boromir674/biskotaki-gold/latest?color=blue&logo=semver&sort=semver
     :alt: GitHub commits since latest release (by SemVer)
 
 .. LICENSE (eg AGPL, MIT)
 .. Github License
 
-.. |gh-lic| image:: https://img.shields.io/github/license/boromir674/biskotaki
+.. |gh-lic| image:: https://img.shields.io/github/license/boromir674/biskotaki-gold
     :alt: GitHub
-    :target: https://github.com/boromir674/biskotaki/blob/main/LICENSE
+    :target: https://github.com/boromir674/biskotaki-gold/blob/main/LICENSE
 
 
 .. CODE QUALITY
@@ -203,10 +203,10 @@ License
 .. Code Climate CI
 .. Code maintainability & Technical Debt
 
-.. |maintainability| image:: https://img.shields.io/codeclimate/maintainability/boromir674/biskotaki
+.. |maintainability| image:: https://img.shields.io/codeclimate/maintainability/boromir674/biskotaki-gold
     :alt: Code Climate Maintainability
-    :target: https://codeclimate.com/github/boromir674/biskotaki
+    :target: https://codeclimate.com/github/boromir674/biskotaki-gold
 
-.. |tech-debt| image:: https://img.shields.io/codeclimate/tech-debt/boromir674/biskotaki
+.. |tech-debt| image:: https://img.shields.io/codeclimate/tech-debt/boromir674/biskotaki-gold
     :alt: Technical Debt
-    :target: https://codeclimate.com/github/boromir674/biskotaki
+    :target: https://codeclimate.com/github/boromir674/biskotaki-gold
