@@ -2,7 +2,7 @@
 Changelog
 =========
 
-0.0.1 (2025-03-28)
+0.0.1 (2025-03-29)
 =======================================
 
 | This is the first ever release of the **biskotakigold** Python Package.
