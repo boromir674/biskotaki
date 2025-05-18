@@ -40,7 +40,7 @@ See [Contributor Setup](#Setting-Up-the-Code-for-Local-Development) to get start
 
 ### Write Documentation
 
-Biskotaki could always use more documentation, whether as part of the official Biskotaki docs, in docstrings, etc.
+Biskotaki Gold Standard could always use more documentation, whether as part of the official Biskotaki Gold Standard docs, in docstrings, etc.
 
 If you want to review your changes on the documentation locally, you can do:
 
@@ -189,7 +189,7 @@ Core committers, use this section to:
 
 #### Fast and Focused
 
-Biskotaki is designed to do one thing, and do that one thing very well.
+Biskotaki Gold Standard is designed to do one thing, and do that one thing very well.
 
 * Cover the important use cases and as little as possible beyond that :)
 

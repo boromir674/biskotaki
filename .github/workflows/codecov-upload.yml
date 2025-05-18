@@ -1,0 +1,47 @@
+## Codecov Upload - Reusable Workflow ##
+
+on:
+  workflow_call:
+    inputs:
+      coverage_artifact:
+        required: true
+        type: string
+        description: "Name of the coverage artifact to upload to Codecov"
+
+    secrets:
+      CODECOV_TOKEN:
+        required: true
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # DOWNLOAD XML FILES FROM ARTIFACTS
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: coverage
+          pattern: coverage-*
+          merge-multiple: true
+
+      - name: Get Codecov binary
+        run: |
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          chmod +x codecov
+
+      - run: ls -R coverage
+
+      # Upload coverage reports to Codecov
+      - name: Upload Coverage Reports to Codecov
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN $}}  # this is "read" from inputs
+        run: |
+          for file in coverage/coverage*.xml; do
+            OS_NAME=$(echo $file | sed -E "s/coverage-(\w\+)-/\1/")
+            PY_VERSION=$(echo $file | sed -E "s/coverage-\w\+-(\d\.)\+/\1/")
+            ./codecov -f $file -e "OS=$OS_NAME,PYTHON=$PY_VERSION" --flags unittests --verbose
+            echo "[INFO] Sent to Codecov: $file !"
+            echo " - Codecov Upload: $file" >> $GITHUB_STEP_SUMMARY
+          done
