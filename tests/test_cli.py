@@ -1,8 +1,7 @@
-import pytest
-
-
-from typing import Generator
 import inspect
+from typing import Generator
+
+import pytest
 from _pytest.fixtures import SubRequest
 from click.testing import CliRunner
 
