@@ -39,17 +39,13 @@ env:  # Note: not available at compile time to use, ie in 'if' conditions or 'wi
 
 
 jobs:
-  # RUN TEST SUITE ON ALL PLATFORMS
+  # TEST JOB Matrix (edit + Wheel Build n Test + Package Metadata Validation)
   test_n_build:
     if: ${{ vars.TEST_JOB_ON != 'false' && !contains(github.event.head_commit.message, '_CI_SKIP_') }}
-    uses: boromir674/automated-workflows/.github/workflows/test_build.yml@test
+    uses: ./.github/workflows/build-n-test.yml
     with:
       # Spawn Job per combination of factors in JOB_MATRIX
       job_matrix: '{"platform": ["ubuntu-latest"], "python-version": ["3.10", "3.11", "3.12"]}'
-      build_installation: 'sdist, wheel'  # Verify sdist and wheel installations/"builds" against Tests
-      # typecheck_policy: '1'  # {0: Skip, 1: Run, 2: Run and allow failures}
-      # run_policy: '0'  # Force skip of downstream 'test_build' Test Job
-      artifact_name: 'BUILD_ARTIFACT'
 
   codecov_coverage_host:
     needs: test_n_build
@@ -138,7 +134,7 @@ jobs:
     secrets:
       TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
 
-  ### JOB: Make a Github Release ###
+  ### JOB: Make a Github Release ###  # TODO: upload Wheel(s) in Github Release
   gh_release:
     needs: signal_deploy
     if: vars.GH_RELEASE_JOB_ON != 'false' && (
