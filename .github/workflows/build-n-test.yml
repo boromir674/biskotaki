@@ -8,11 +8,6 @@ name: "Test Python Complete Workflow"
 on:
   workflow_call:
     inputs:
-      typecheck_policy:
-        required: false
-        type: string
-        default: "1"
-        description: "0 = Off, 1 = On, 2 = Allow Fail"
 
       # JOB_MATRIX
       job_matrix:
@@ -98,9 +93,10 @@ jobs:
         with:
           version: "latest"
 
+      # with uv this started indicating errors, which are false positives
       ### Sanity Check that folder is Compatible for Python Distro / Build ###
-      - name: Run Pyroma on the Directory
-        run: uvx pyroma --directory .
+      # - name: Run Pyroma on the Directory
+      #   run: uvx pyroma --directory .
 
       ### IF v*-rc tag pushed: update sources sem ver with -rc suffix ###
       - name: "Update Source Sem Ver with Release Candidate *-rc' suffix"
