@@ -21,7 +21,7 @@ def cli_runner(request: SubRequest) -> CliRunner:
         # pass all runtime to kwargs
         runner_kwargs = marker.kwargs
         if (
-            not "mix_stderr" in inspect.signature(CliRunner).parameters
+            "mix_stderr" not in inspect.signature(CliRunner).parameters
         ):  # we are on click >= 8.2
             # remove kwargs that are not in signature
             runner_kwargs.pop("mix_stderr", None)
