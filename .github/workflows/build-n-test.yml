@@ -208,10 +208,25 @@ jobs:
           echo "[INFO] Running pyroma on the sdist"
           pyroma --file "$(ls ../dist/*.tar.gz)"
 
-          # Check both .whl and .tar.gz files using 'twine check' command
-          echo "[INFO] Running twine check on the sdist and wheel"
-          python -m twine check ../dist/*
+      - name: Run Twine Check on Sdist .tar.gz file
+        shell: bash
+        working-directory: verification
+        run: |
+          . check-env/${{ env.VENV_ACTIVATE }}
 
+          # Check .tar.gz files using 'twine check' command
+          echo "[INFO] Running twine check on the sdist .tar.gz file"
+          python -m twine check ../dist/biskotakigold-${{ steps.extract_wheel_info.outputs.PEP_VERSION }}.tar.gz
+
+      - name: Run Twine Check on Wheel .whl file
+        shell: bash
+        working-directory: verification
+        run: |
+          . check-env/${{ env.VENV_ACTIVATE }}
+
+          # Check .whl file using 'twine check' command
+          echo "[INFO] Running twine check on the Wheel .whl file"
+          python -m twine check ../dist/biskotakigold-${{ steps.extract_wheel_info.outputs.PEP_VERSION }}-py3-none-any.whl
 
       ######## PHASE 4: INSTALL WHEELS AND RUN SANITY CHECKS ########
 
