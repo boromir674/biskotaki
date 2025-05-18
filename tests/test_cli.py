@@ -1,26 +1,55 @@
 import pytest
 
 
+from typing import Generator
+import inspect
+from _pytest.fixtures import SubRequest
+from click.testing import CliRunner
+
+
 @pytest.fixture
-def get_main_arguments():
-    return type('A', (), {'command_line_script_args': None, 'main_function_kwargs': {}})
+def cli_runner(request: SubRequest) -> CliRunner:
+    """Instance of `click.testing.CliRunner`, configurable with `@pytest.mark.click_setup`.
+
+    @pytest.mark.click_setup(charset="cp1251")
+    def test_something(cli_runner):
+        ...
+    """
+    runner_kwargs = {}
+    marker = request.node.get_closest_marker("click_setup")
+    # get kwargs when invoked as: @pytest.mark.click_setup(mix_stderr=False)
+    if marker:
+        # pass all runtime to kwargs
+        runner_kwargs = marker.kwargs
+        if not "mix_stderr" in inspect.signature(CliRunner).parameters:  # we are on click >= 8.2
+            # remove kwargs that are not in signature
+            runner_kwargs.pop("mix_stderr", None)
+
+    return CliRunner(**runner_kwargs)
 
 
-@pytest.mark.runner_setup(mix_stderr=False)
+@pytest.fixture
+def isolated_cli_runner(cli_runner: CliRunner) -> Generator[CliRunner, None, None]:
+    """Instance of `click.testing.CliRunner` with automagically `isolated_filesystem()` called."""
+    with cli_runner.isolated_filesystem():
+        yield cli_runner
+
+
+
+@pytest.mark.click_setup(mix_stderr=False)  # needes click < 8.2.0
 def test_cli(
-    get_main_arguments,
-    isolated_cli_runner,
+    isolated_cli_runner,  # run in fresh new temp directory (useful if cwd changes)
 ):
     from biskotakigold.cli import main
 
-    main_arguments = get_main_arguments()
+    ARGS, KWARGS = None, dict()
     result = isolated_cli_runner.invoke(
         main,
-        args=main_arguments.command_line_script_args,
+        args=ARGS,
         input=None,
         env=None,
         catch_exceptions=False,
-        **main_arguments.main_function_kwargs,
+        **KWARGS,
     )
     assert result.exit_code == 0
     assert result.stdout == ''
