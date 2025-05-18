@@ -20,7 +20,9 @@ def cli_runner(request: SubRequest) -> CliRunner:
     if marker:
         # pass all runtime to kwargs
         runner_kwargs = marker.kwargs
-        if not "mix_stderr" in inspect.signature(CliRunner).parameters:  # we are on click >= 8.2
+        if (
+            not "mix_stderr" in inspect.signature(CliRunner).parameters
+        ):  # we are on click >= 8.2
             # remove kwargs that are not in signature
             runner_kwargs.pop("mix_stderr", None)
 
@@ -32,7 +34,6 @@ def isolated_cli_runner(cli_runner: CliRunner) -> Generator[CliRunner, None, Non
     """Instance of `click.testing.CliRunner` with automagically `isolated_filesystem()` called."""
     with cli_runner.isolated_filesystem():
         yield cli_runner
-
 
 
 @pytest.mark.click_setup(mix_stderr=False)  # needes click < 8.2.0
