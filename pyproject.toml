@@ -4,11 +4,11 @@ module-name = "biskotakigold"
 module-root = "src"
 
 source-include = [
-    { path = "tests", format = "sdist" },
-    { path = "docs/**/*.md", format = "sdist" },
-    { path = "mkdocs.yml", format = "sdist" },
-    { path = "src/**/*.typed", format = "sdist" },
-    { path = "src/stubs/*.pyi", format = "sdist" },
+    "tests/**",
+    "docs/**/*.md",
+    "mkdocs.yml",
+    "src/**/*.typed",
+    "src/stubs/*.pyi",
     "LICENSE",
     "README.rst",
     "CONTRIBUTING.md",
