@@ -104,7 +104,7 @@ jobs:
         shell: bash
         run: |
           # Extract PROD Sem Ver
-          VERSION_SOURCE_OF_TRUTH='src/cookiecutter_python/__init__.py'
+          VERSION_SOURCE_OF_TRUTH='src/biskotakigold/__init__.py'
 
           REGEX='^[[:space:]]*__version__[[:space:]]*=[[:space:]]*["'\'']([0-9]+)\.([0-9]+)\.([0-9]+)["'\'']'
 
@@ -167,7 +167,7 @@ jobs:
         shell: bash
         run: |
           # Extract PEP version from wheel file name
-          WHEEL_FILE=$(ls dist/cookiecutter_python-*.whl)
+          WHEEL_FILE=$(ls dist/biskotakigold-*.whl)
 
           # extract file name from wheel file
           WHEEL_NAME="$(basename $WHEEL_FILE)"
@@ -175,12 +175,12 @@ jobs:
           echo "WHEEL_NAME=$WHEEL_NAME" >> $GITHUB_ENV
 
           # extract pep version from wheel file name, supporting patterns such as below:
-          # - '1.15.0rc0' from 'cookiecutter_python-1.15.0rc0-py3-none-any.whl'
-          # - '1.2.12' from 'cookiecutter_python-1.2.12-py3-none-any.whl'
-          # - '1.2.12' from 'cookiecutter_python-1.2.12-cp3-abi3-any.whl'
-          # - '3.0.7' from 'cookiecutter_python-3.0.7-jy3-none-any.whl'
-          # - '8.9.37dev0' from 'cookiecutter_python-8-9-37dev0-jy3-none-win32.whl'
-          # - '8.9.37dev0' from 'cookiecutter_python-8-9-37dev0-jy3-none-linux_i386.whl'
+          # - '1.15.0rc0' from 'biskotakigold-1.15.0rc0-py3-none-any.whl'
+          # - '1.2.12' from 'biskotakigold-1.2.12-py3-none-any.whl'
+          # - '1.2.12' from 'biskotakigold-1.2.12-cp3-abi3-any.whl'
+          # - '3.0.7' from 'biskotakigold-3.0.7-jy3-none-any.whl'
+          # - '8.9.37dev0' from 'biskotakigold-8-9-37dev0-jy3-none-win32.whl'
+          # - '8.9.37dev0' from 'biskotakigold-8-9-37dev0-jy3-none-linux_i386.whl'
 
           PEP_VERSION=$(echo $WHEEL_NAME | cut -d'-' -f2 | sed 's/-/./g')
           echo "PEP_VERSION=$PEP_VERSION" >> $GITHUB_OUTPUT
