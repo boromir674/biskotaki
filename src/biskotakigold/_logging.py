@@ -29,8 +29,8 @@ Usage:
 import logging
 
 
-# for 'biskotaki' app/code
-FILE_TARGET_LOGS = 'biskotaki.log'
+# for 'biskotakigold' python module
+FILE_TARGET_LOGS = 'biskotakigold.log'
 
 #### FILE LOGGING
 # set up logging to file for DEBUG Level and above
